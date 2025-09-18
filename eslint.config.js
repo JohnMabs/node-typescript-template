@@ -6,7 +6,7 @@ import perfectionist from "eslint-plugin-perfectionist";
 
 export default defineConfig([
   {
-    ignores: ["dist/**/*", "coverage/**/*", "*.js", "*.mjs"],
+    ignores: ["dist/**/*", "coverage/**/*"],
   },
   {
     files: ["**/*.{js,mjs,cjs,ts,mts,cts}"],
@@ -15,7 +15,9 @@ export default defineConfig([
     languageOptions: {
       globals: globals.browser,
       parserOptions: {
-        projectService: true,
+        projectService: {
+          allowDefaultProject: ["*.js"],
+        },
         tsconfigRootDir: import.meta.dirname,
       },
     },

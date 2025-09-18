@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A simple starter template for a Node.js project with TypeScript",
   "main": "dist/index.js",
+  "type": "module",
   "keywords": [
     "node",
     "typescript",
@@ -54,14 +55,5 @@
       "template-dev": "./src/*",
       "default": "./dist/*"
     }
-  },
-  "lint-staged": {
-    "*.{js, jsx, ts, tsx}": [
-      "eslint",
-      "prettier --check"
-    ],
-    "*.{json, yml, yaml, md}": [
-      "prettier --check"
-    ]
   }
 }

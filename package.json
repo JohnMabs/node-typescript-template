@@ -1,0 +1,67 @@
+{
+  "name": "typescript-template",
+  "version": "1.0.0",
+  "description": "A simple starter template for a Node.js project with TypeScript",
+  "main": "dist/index.js",
+  "keywords": [
+    "node",
+    "typescript",
+    "javascript"
+  ],
+  "author": "John Mabiala",
+  "license": "MIT",
+  "homepage": "https://github.com/JohnMabs/node-typescript-template#readme",
+  "bugs": {
+    "url": "https://github.com/JohnMabs/node-typescript-template/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JohnMabs/node-typescript-template.git"
+  },
+  "scripts": {
+    "dev": "tsx -C my-package-dev --watch --no-warnings --env-file=.env ./src/index.ts",
+    "start": "node --env-file=.env ./dist/index.js",
+    "build": "tsc -p tsconfig.build.json",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "test:ui": "vitest --ui",
+    "coverage": "vitest run --coverage",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.35.0",
+    "@types/node": "^24.5.1",
+    "@vitest/coverage-v8": "^3.2.4",
+    "@vitest/ui": "^3.2.4",
+    "eslint": "^9.35.0",
+    "eslint-plugin-perfectionist": "^4.15.0",
+    "globals": "^16.4.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.6",
+    "prettier": "3.6.2",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.44.0",
+    "vitest": "^3.2.4"
+  },
+  "imports": {
+    "#*": {
+      "template-dev": "./src/*",
+      "default": "./dist/*"
+    }
+  },
+  "lint-staged": {
+    "*.{js, jsx, ts, tsx}": [
+      "eslint",
+      "prettier --check"
+    ],
+    "*.{json, yml, yaml, md}": [
+      "prettier --check"
+    ]
+  }
+}
